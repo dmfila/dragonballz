@@ -1,35 +1,35 @@
-import React from 'react';
-import './App.scss';
+import React, { useEffect } from 'react';
+import './App.css';
 
-const sections = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-];
+import FlipDown from './flipdown';
+import './flipdown.css';
 
 function App() {
+  useEffect(() => {
+    const untilDate = new Date("2020-09-26T00:00:00.000Z").getTime() / 1000;
+
+    new FlipDown(untilDate)
+      .start() // Start the countdown
+      .ifEnded(() => { // Do something when the countdown ends
+        console.log('Dragon ball is released');
+      });
+  });
+
   return (
     <div className="App">
-      {/* <video id="background-video" loop autoPlay>
-        <source src="https://www.youtube.com/watch?v=ixboYwEqJS8" type="video/mp4" />
-          Your browser does not support the video tag.
-      </video> */}
-      <div className="clock">
-        <div className="no no--min-tens no--sec-tens">
-          {sections.map(section => <div key={`min-tens-${section}`} />)}
+      <div className="video-wrapper">
+        <div className="video-back">
+          <video id="background-video" loop autoPlay muted>
+            <source src="https://www.dropbox.com/s/4s2c14zlumynjvw/background.mp4?raw=1" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
         </div>
-        <div className="no no--min-units">
-          {sections.map(section => <div key={`min-units-${section}`} />)}
-        </div>
-        <div className="no no--colon">
-          {sections.map(section => <div key={`colon-${section}`} />)}
-        </div>
-        <div className="no no--sec-tens">
-          {sections.map(section => <div key={`sec-tens-${section}`} />)}
-        </div>
-        <div className="no no--sec-units">
-          {sections.map(section => <div key={`sec-tens-${section}`} />)}
-        </div>
+      </div>
+      <div className="logo-wrapper">
+        <img src="/logo.png" />
+      </div>
+      <div className="counter-wrapper">
+        <div id="flipdown" className="flipdown"></div>
       </div>
     </div>
   );
