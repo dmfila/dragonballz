@@ -20,7 +20,8 @@ function App() {
       <div className="video-wrapper">
         <div className="video-back">
           <video id="background-video" loop autoPlay muted playsInline>
-            <source src="/background1.webm" type="video/webm" />
+            {/* <source src="/background1.webm" type="video/webm" /> */}
+            <source src="/background.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
         </div>
