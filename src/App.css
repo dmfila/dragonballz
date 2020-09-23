@@ -72,13 +72,14 @@ body.light-theme .buttons .button:hover {
 
 .logo-wrapper>img {
   margin-left: 30px;
+  margin-top: 20px;
   width: 30%;
 }
 
 @media screen and (max-width: 480px) {
   .logo-wrapper > img {
     margin-left: 30px;
-    margin-top: 40px;
-    width: 30%;
+    margin-top: 50px;
+    width: 40%;
   }
 }
