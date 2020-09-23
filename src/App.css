@@ -70,7 +70,15 @@ body.light-theme .buttons .button:hover {
   height: 100%;
 }
 
-.logo-wrapper > img {
+.logo-wrapper>img {
   margin-left: 30px;
   width: 30%;
+}
+
+@media screen and (max-width: 480px) {
+  .logo-wrapper > img {
+    margin-left: 30px;
+    margin-top: 40px;
+    width: 30%;
+  }
 }

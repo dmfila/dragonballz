@@ -6,7 +6,7 @@ import './flipdown.css';
 
 function App() {
   useEffect(() => {
-    const untilDate = new Date("2020-09-26T00:00:00.000Z").getTime() / 1000;
+    const untilDate = new Date("2020-10-03T00:00:00.000Z").getTime() / 1000;
 
     new FlipDown(untilDate)
       .start() // Start the countdown
